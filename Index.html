@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículum Vitae - Anderson Martínez Restrepo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .contact-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            border-bottom: 1px solid #000;
+            padding-bottom: 5px;
+        }
+        .section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .section ul li {
+            margin: 5px 0;
+        }
+        .button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="cv-content">
+        <div class="header">
+            <h1>Anderson Martínez Restrepo</h1>
+            <p>Fullstack y Desarrollador PHP</p>
+        </div>
+        <div class="contact-info">
+            <p>Sabaneta, ANT 055450</p>
+            <p>amr@andersonmares.xyz | +57 (316) 826-5737</p>
+            <p>LinkedIn: @anderson.martinez.restrepo</p>
+        </div>
+        <div class="section">
+            <h2>Resumen Profesional</h2>
+            <p>Soy Anderson Martinez Restrepo, un apasionado desarrollador de software con una amplia experiencia en el campo. Tengo experiencia en el desarrollo de aplicaciones web utilizando PHP, Laravel, MySQL, HTML, CSS, JavaScript, jQuery y más. Poseo fuertes habilidades de comunicación, creatividad, adaptabilidad y trabajo en equipo.</p>
+        </div>
+        <div class="section">
+            <h2>Experiencia Profesional</h2>
+            <ul>
+                <li>
+                    <h3>Desarrollador PHP | BUILT - Tech First</h3>
+                    <p>Enero 2018 - Actualidad</p>
+                    <ul>
+                        <li>Colaboración con el equipo de desarrollo para implementar nuevas funcionalidades y optimizar aplicaciones existentes.</li>
+                        <li>Trabajo conjunto con diseñadores y probadores para corregir errores del sitio y mejorar la experiencia del usuario.</li>
+                        <li>Adaptación rápida a nuevas tecnologías y enfoque proactivo en la resolución de problemas.</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Analista de Sistemas | Incolmotos Yamaha S.A.</h3>
+                    <p>Junio 2013 - Diciembre 2017</p>
+                    <ul>
+                        <li>Gestión de proyectos e implementación de soluciones tecnológicas.</li>
+                        <li>Implementación y personalización de aplicaciones de formación virtual y gestión de la intranet.</li>
+                        <li>Capacidad para gestionar múltiples tareas y cumplir con los plazos.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Educación</h2>
+            <ul>
+                <li>
+                    <h3>LinkedIn Learning</h3>
+                    <p>Conviértete en desarrollador web full-stack | Abr 2021 - May 2021</p>
+                </li>
+                <li>
+                    <h3>Corporación Universitaria de Sabaneta - UNISABANETA</h3>
+                    <p>Ingeniero informático | Ago 2014 - May 2018</p>
+                </li>
+                <li>
+                    <h3>Compuedu</h3>
+                    <p>Técnico de sistemas | Feb 2003 - Jun 2004</p>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Habilidades</h2>
+            <ul>
+                <li>PHP</li>
+                <li>Laravel</li>
+                <li>MySQL</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>jQuery</li>
+                <li>Comunicación</li>
+                <li>Creatividad</li>
+                <li>Adaptabilidad</li>
+                <li>Trabajo en equipo</li>
+                <li>Proactividad</li>
+                <li>Recursividad</li>
+                <li>Resolución de problemas</li>
+                <li>Git</li>
+                <li>Angular.js</li>
+                <li>Node.js</li>
+                <li>Wordpress</li>
+                <li>React.js</li>
+                <li>Vue.js</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Idiomas</h2>
+            <ul>
+                <li>Español - Nativo</li>
+                <li>Inglés - Avanzado</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Habilidades Adicionales</h2>
+            <ul>
+                <li>Pensamiento Innovador</li>
+                <li>Profesionalismo</li>
+                <li>Colaboración</li>
+                <li>Análisis de Datos</li>
+                <li>Webflow & Power Platform</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Contacto</h2>
+            <p>Dirección: CR 46 75 sur -150</p>
+            <p>Teléfono: +57 (316) 826-5737</p>
+            <p>E-mail: amr@andersonmares.xyz</p>
+            <p>LinkedIn: @anderson.martinez.restrepo</p>
+            <p>Facebook: Anderson Martinez R.</p>
+            <p>Instagram: @andermanamr</p>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button onclick="generatePDF()">Generar PDF</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script>
+        function generatePDF() {
+            const element = document.getElementById('cv-content');
+            html2pdf().from(element).save('Anderson_Martinez_Restrepo_CV.pdf');
+        }
+    </script>
+</body>
+</html>
+
