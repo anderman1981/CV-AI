@@ -160,14 +160,106 @@
     </div>
 
     <div class="button-container">
-        <button onclick="generatePDF()">Generar PDF</button>
+        <button onclick="generatePDF('es')">Generar PDF en Español</button>
+        <button onclick="translateToEnglish()">Traducir al Inglés</button>
+        <button onclick="generatePDF('en')" id="generate-pdf-en" style="display:none;">Generar PDF en Inglés</button>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
     <script>
-        function generatePDF() {
+        function generatePDF(lang) {
             const element = document.getElementById('cv-content');
-            html2pdf().from(element).save('Anderson_Martinez_Restrepo_CV.pdf');
+            const filename = lang === 'en' ? 'Anderson_Martinez_Restrepo_CV_English.pdf' : 'Anderson_Martinez_Restrepo_CV.pdf';
+            html2pdf().from(element).save(filename);
+        }
+
+        function translateToEnglish() {
+            document.querySelector('.header h1').innerText = 'Anderson Martinez Restrepo';
+            document.querySelector('.header p').innerText = 'PHP Web Developer';
+            document.querySelector('.contact-info p:nth-child(1)').innerText = 'Sabaneta, ANT 055450';
+            document.querySelector('.contact-info p:nth-child(2)').innerText = 'andersonmares81@gmail.com | +57 (316) 826-5737';
+            document.querySelector('.contact-info p:nth-child(3)').innerHTML = 'LinkedIn: <a href="https://www.linkedin.com/in/anderson-martinez-restrepo/">@anderson-martinez-restrepo</a>';
+            document.querySelector('.section h2').innerText = 'Professional Summary';
+            document.querySelector('.section p').innerText = 'Experienced software developer, proficient in design, installation, testing, and maintenance of software systems. Skilled in various platforms, languages, and embedded systems. Experienced with the latest development tools and procedures. Able to effectively self-manage during independent projects as well as collaborate as part of a productive team.';
+            document.querySelector('.section:nth-of-type(2) h2').innerText = 'Professional Experience';
+            // Update experience details
+            const experiences = document.querySelectorAll('.section:nth-of-type(2) ul li');
+            experiences[0].querySelector('h3').innerText = 'PHP Developer | BUILT - Tech First';
+            experiences[0].querySelector('p').innerText = 'March 2022 - Present';
+            experiences[0].querySelectorAll('ul li')[0].innerText = 'Collaborated with testers to fix site bugs.';
+            experiences[0].querySelectorAll('ul li')[1].innerText = 'Optimized new functionalities of the applications.';
+            experiences[0].querySelectorAll('ul li')[2].innerText = 'Incorporated new technologies and functionalities.';
+            experiences[0].querySelectorAll('ul li')[3].innerText = 'Worked with designers to implement changes and improvements.';
+            experiences[0].querySelectorAll('ul li')[4].innerText = 'Collaborated with team members in all project phases.';
+            experiences[0].querySelector('p strong').innerText = 'Technologies:';
+
+            experiences[1].querySelector('h3').innerText = 'System Analyst | Incolmotos Yamaha S.A., Girardota';
+            experiences[1].querySelector('p').innerText = 'October 2000 - October 2022';
+            experiences[1].querySelectorAll('ul li')[0].innerText = 'Implementation, customization, and management of the Moodle virtual training application.';
+            experiences[1].querySelectorAll('ul li')[1].innerText = 'Implementation, customization, and management of the Intranet in Joomla.';
+            experiences[1].querySelectorAll('ul li')[2].innerText = 'Documentation and implementation of new projects as per specifications.';
+            experiences[1].querySelectorAll('ul li')[3].innerText = 'System integration for management applications.';
+            experiences[1].querySelectorAll('ul li')[4].innerText = 'Analysis and implementation of new technologies and development tools.';
+            experiences[1].querySelector('p strong').innerText = 'Technologies:';
+
+            experiences[2].querySelector('h3').innerText = 'PHP Developer | CTI Consulting, USA';
+            experiences[2].querySelector('p').innerText = 'January 2022 - February 2022';
+            experiences[2].querySelectorAll('ul li')[0].innerText = 'Fixed bugs found by QA testers.';
+            experiences[2].querySelectorAll('ul li')[1].innerText = 'Documented development processes.';
+            experiences[2].querySelectorAll('ul li')[2].innerText = 'Studied new technologies for modifications and adjustments in applications.';
+            experiences[2].querySelector('p strong').innerText = 'Technologies:';
+
+            // Update education
+            document.querySelector('.section:nth-of-type(3) h2').innerText = 'Education';
+            const educations = document.querySelectorAll('.section:nth-of-type(3) ul li');
+            educations[0].querySelector('h3').innerText = 'Web development full stack or front-end, Course';
+            educations[0].querySelector('p').innerText = 'LinkedIn Learning, Online';
+            educations[1].querySelector('h3').innerText = 'Computer Engineering';
+            educations[1].querySelector('p').innerText = 'UNISABANETA, Sabaneta | February 2013 - November 2018';
+            educations[2].querySelector('h3').innerText = 'Systems Technician';
+            educations[2].querySelector('p').innerText = 'Compuedu, Envigado | January 2003 - June 2004';
+
+            // Update skills
+            document.querySelector('.section:nth-of-type(4) h2').innerText = 'Skills';
+            document.querySelector('.section:nth-of-type(4) ul').innerHTML = `
+                <li>PHP 5</li>
+                <li>PHP 7</li>
+                <li>MySQL</li>
+                <li>HTML</li>
+                <li>HTML5</li>
+                <li>CSS</li>
+                <li>CSS3</li>
+                <li>Bootstrap</li>
+                <li>GIT</li>
+                <li>Jquery</li>
+                <li>Laravel</li>
+                <li>YII2</li>
+                <li>Angular.js</li>
+                <li>Node.js</li>
+                <li>Wordpress</li>
+            `;
+
+            // Update soft skills
+            document.querySelector('.section:nth-of-type(5) h2').innerText = 'Soft Skills';
+            document.querySelector('.section:nth-of-type(5) ul').innerHTML = `
+                <li>Communication</li>
+                <li>Creativity</li>
+                <li>Adaptability</li>
+                <li>Teamwork</li>
+                <li>Proactivity</li>
+                <li>Resourcefulness</li>
+                <li>Problem Solving</li>
+            `;
+
+            // Update references
+            document.querySelector('.section:nth-of-type(6) h2').innerText = 'References';
+            document.querySelector('.section:nth-of-type(6) ul').innerHTML = `
+                <li>Dariem Garcés Urquiza - Devops And Cloud Engineer</li>
+                <li>Juan Ospina - Lead Solutions Architect at CTI Consulting, CTI Consulting</li>
+            `;
+
+            // Show English download button
+            document.getElementById('generate-pdf-en').style.display = 'inline-block';
         }
     </script>
 </body>
