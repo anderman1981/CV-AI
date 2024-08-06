@@ -181,9 +181,9 @@
             document.querySelector('.contact-info p:nth-child(3)').innerHTML = 'LinkedIn: <a href="https://www.linkedin.com/in/anderson-martinez-restrepo/">@anderson-martinez-restrepo</a>';
             document.querySelector('.section h2').innerText = 'Professional Summary';
             document.querySelector('.section p').innerText = 'Experienced software developer, proficient in design, installation, testing, and maintenance of software systems. Skilled in various platforms, languages, and embedded systems. Experienced with the latest development tools and procedures. Able to effectively self-manage during independent projects as well as collaborate as part of a productive team.';
-            document.querySelector('.section:nth-of-type(2) h2').innerText = 'Professional Experience';
-            // Update experience details
-            const experiences = document.querySelectorAll('.section:nth-of-type(2) ul li');
+            
+            document.querySelectorAll('.section')[1].querySelector('h2').innerText = 'Professional Experience';
+            const experiences = document.querySelectorAll('.section')[1].querySelectorAll('ul li');
             experiences[0].querySelector('h3').innerText = 'PHP Developer | BUILT - Tech First';
             experiences[0].querySelector('p').innerText = 'March 2022 - Present';
             experiences[0].querySelectorAll('ul li')[0].innerText = 'Collaborated with testers to fix site bugs.';
@@ -209,9 +209,8 @@
             experiences[2].querySelectorAll('ul li')[2].innerText = 'Studied new technologies for modifications and adjustments in applications.';
             experiences[2].querySelector('p strong').innerText = 'Technologies:';
 
-            // Update education
-            document.querySelector('.section:nth-of-type(3) h2').innerText = 'Education';
-            const educations = document.querySelectorAll('.section:nth-of-type(3) ul li');
+            document.querySelectorAll('.section')[2].querySelector('h2').innerText = 'Education';
+            const educations = document.querySelectorAll('.section')[2].querySelectorAll('ul li');
             educations[0].querySelector('h3').innerText = 'Web development full stack or front-end, Course';
             educations[0].querySelector('p').innerText = 'LinkedIn Learning, Online';
             educations[1].querySelector('h3').innerText = 'Computer Engineering';
@@ -219,9 +218,8 @@
             educations[2].querySelector('h3').innerText = 'Systems Technician';
             educations[2].querySelector('p').innerText = 'Compuedu, Envigado | January 2003 - June 2004';
 
-            // Update skills
-            document.querySelector('.section:nth-of-type(4) h2').innerText = 'Skills';
-            document.querySelector('.section:nth-of-type(4) ul').innerHTML = `
+            document.querySelectorAll('.section')[3].querySelector('h2').innerText = 'Skills';
+            document.querySelectorAll('.section')[3].querySelector('ul').innerHTML = `
                 <li>PHP 5</li>
                 <li>PHP 7</li>
                 <li>MySQL</li>
@@ -239,9 +237,8 @@
                 <li>Wordpress</li>
             `;
 
-            // Update soft skills
-            document.querySelector('.section:nth-of-type(5) h2').innerText = 'Soft Skills';
-            document.querySelector('.section:nth-of-type(5) ul').innerHTML = `
+            document.querySelectorAll('.section')[4].querySelector('h2').innerText = 'Soft Skills';
+            document.querySelectorAll('.section')[4].querySelector('ul').innerHTML = `
                 <li>Communication</li>
                 <li>Creativity</li>
                 <li>Adaptability</li>
@@ -251,14 +248,12 @@
                 <li>Problem Solving</li>
             `;
 
-            // Update references
-            document.querySelector('.section:nth-of-type(6) h2').innerText = 'References';
-            document.querySelector('.section:nth-of-type(6) ul').innerHTML = `
+            document.querySelectorAll('.section')[5].querySelector('h2').innerText = 'References';
+            document.querySelectorAll('.section')[5].querySelector('ul').innerHTML = `
                 <li>Dariem Garcés Urquiza - Devops And Cloud Engineer</li>
                 <li>Juan Ospina - Lead Solutions Architect at CTI Consulting, CTI Consulting</li>
             `;
 
-            // Show English download button
             document.getElementById('generate-pdf-en').style.display = 'inline-block';
         }
     </script>
